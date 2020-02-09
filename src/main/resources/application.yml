@@ -1,0 +1,44 @@
+# General properties
+server:
+  port:  8080
+
+
+# For cloud config; native = to look for local
+spring:
+#  profiles:
+#    active: native
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/amsoff/pluralsight-spring-cloudconfig-wa-tolls
+          search-paths:
+            - 'station*'
+          repos:
+            perf:
+              pattern:
+                - "*/pref"
+              uri: https://github.com/amsoff/intro-cloud-config
+              searchPaths:
+                - "station*"
+
+# Enabling features for actuator dependency path/actuator/{id}
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - '*'
+  endpoint:
+    web:
+      enabled: true
+    beans:
+      enabled: true
+    metrics:
+      enabled: true
+    prometheus:
+      enabled: true
+    health:
+      show-details: always
+    env:
+      enabled: true
