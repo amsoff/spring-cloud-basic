@@ -19,5 +19,7 @@
    spring.cloud.config.server.git.repos.prod.pattern -- pattern to go to alternate repos
    
    ##Consuming Configuration:
-   Spring apps use Config Servers as a property source
-   Loads values based in app name, profile amd labels
+   1. Spring apps use Config Servers as a property source
+   2. Loads values based in app name, profile and labels
+   3. Annota code with @value
+   4. Can consume from non Spring apps 
