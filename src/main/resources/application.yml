@@ -1,6 +1,6 @@
 # General properties
 server:
-  port:  8080
+  port:  8888
 
 
 # For cloud config; native = to look for local
